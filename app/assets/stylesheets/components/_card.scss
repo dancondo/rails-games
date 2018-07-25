@@ -1,0 +1,39 @@
+.game-card {
+  margin: 16px;
+  border: 1px solid black;
+}
+.game-card:nth-child(odd){
+  margin: 16px 0;
+}
+.game-card:hover{
+  box-shadow: 0 0 200px pink;
+}
+
+.game-card-image {
+  height: 240px;
+  background-size: cover !important;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+.game-card-content {
+  min-height: 160px;
+  position: relative;
+  background-color: lightgrey
+}
+.game-price {
+  position: absolute;
+  font-size: 26px;
+  color: green;
+  top: 16px;
+  right: 16px;
+}
+.game-info {
+  padding: 16px;;
+  h2 {
+    font-size: 24px;
+  }
+  p {
+    font-size: 16px;
+  }
+}

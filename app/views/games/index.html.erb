@@ -1,0 +1,27 @@
+<h1>Games#index</h1>
+<p>Find me in app/views/games/index.html.erb</p>
+<% @games.each_with_index do |game, index| %>
+  <% if index % 3 == 0 && index != 0 %>
+    </div>
+  <% end %>
+  <% if index % 3 == 0 %>
+    <div class="row">
+  <% end %>
+  <div class="col-xs-12 col-sm-4">
+    <%= link_to game do %>
+    <div class="game-card">
+      <div class="game-card-image" style = "background-image: url(<%= game.image_url %>)">
+        <div class='game-price'>
+          <p><i class="fas fa-dollar-sign"></i><%= game.price %></p>
+        </div>
+      </div>
+      <div class="game-card-content">
+        <div class="game-info">
+          <h2><%= game.name %></h2>
+          <p><%= game.description %></p>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+<% end %>

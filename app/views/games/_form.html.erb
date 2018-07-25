@@ -1,0 +1,9 @@
+<%= simple_form_for @game do |f| %>
+  <%= f.input :name %>
+  <%= f.input :genre %>
+  <%= f.input :image_url %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.input :rating %>
+  <%= f.submit "Add Game", class: "btn btn-success" %>
+<% end %>

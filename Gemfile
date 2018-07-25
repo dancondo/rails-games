@@ -60,3 +60,12 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+#Bootstrap
+gem 'font-awesome-sass', '~> 5.0.13'
+gem 'simple_form'
+gem 'autoprefixer-rails'
+gem 'jquery-rails'
+gem 'bootstrap'
+#Faker
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
