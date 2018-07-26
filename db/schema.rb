@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_25_181301) do
+ActiveRecord::Schema.define(version: 2018_07_25_225912) do
+
+  create_table "comments", force: :cascade do |t|
+    t.text "content"
+    t.integer "post_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_comments_on_post_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
 
   create_table "games", force: :cascade do |t|
     t.string "name"
@@ -19,6 +29,37 @@ ActiveRecord::Schema.define(version: 2018_07_25_181301) do
     t.text "description"
     t.integer "price"
     t.integer "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.integer "game_id"
+    t.integer "user_id"
+    t.text "content"
+    t.string "topic"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_posts_on_game_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "ratings", force: :cascade do |t|
+    t.integer "score"
+    t.integer "game_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_ratings_on_game_id"
+    t.index ["user_id"], name: "index_ratings_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "password"
+    t.string "email"
+    t.text "description"
+    t.string "profile_image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

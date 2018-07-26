@@ -1,4 +1,7 @@
 class Game < ApplicationRecord
+  has_many :posts
+  has_many :ratings
+
   validates :name, uniqueness: true, presence: true
   validates :address, presence: true
   validates :genre, presence: true
